@@ -24,7 +24,6 @@ function App() {
   const [loading, setLoading] = useState({ products: false, cart: false });
   const [error, setError] = useState({ products: null, cart: null, general: null });
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
 
   // Fetch products from API
   const loadProducts = async () => {
@@ -188,8 +187,7 @@ function App() {
   // Filter products based on search and category
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+    return matchesSearch;
   });
 
   if (loading.products && products.length === 0) {
@@ -253,37 +251,6 @@ function App() {
             {error.cart && <div>Cart Error: {error.cart}</div>}
           </div>
         )}
-
-        {/* Category Filter */}
-        <div className="category-filter">
-          <h3>Filter by Category</h3>
-          <div className="category-buttons">
-            <button 
-              className={selectedCategory === 'all' ? 'active' : ''}
-              onClick={() => setSelectedCategory('all')}
-            >
-              All Products
-            </button>
-            <button 
-              className={selectedCategory === 'electronics' ? 'active' : ''}
-              onClick={() => setSelectedCategory('electronics')}
-            >
-              Electronics
-            </button>
-            <button 
-              className={selectedCategory === 'clothing' ? 'active' : ''}
-              onClick={() => setSelectedCategory('clothing')}
-            >
-              Clothing
-            </button>
-            <button 
-              className={selectedCategory === 'home' ? 'active' : ''}
-              onClick={() => setSelectedCategory('home')}
-            >
-              Home & Kitchen
-            </button>
-          </div>
-        </div>
 
         {showCart && (
           <CartView 
