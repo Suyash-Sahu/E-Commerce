@@ -2,6 +2,9 @@
 
 A full-stack e-commerce cart application built with React, Node.js, Express, and MongoDB.
 
+## Demo Link
+https://youtu.be/qAaCy8zdUy4
+
 ## Features
 
 - Product listing with images and prices
@@ -11,17 +14,13 @@ A full-stack e-commerce cart application built with React, Node.js, Express, and
 - Checkout form with name and email
 - Order receipt generation
 - Responsive design for mobile and desktop
-- Professional UI with header, footer, and navigation
-- Product search functionality
-- Category filtering
-- Hero section with promotional content
 
 ## Tech Stack
 
 - **Frontend**: React with Vite
 - **Backend**: Node.js with Express
 - **Database**: MongoDB with Mongoose
-- **Styling**: CSS3 (Modern, responsive design)
+- **Styling**: CSS3
 
 ## Prerequisites
 
@@ -84,7 +83,6 @@ e-com/
 │   └── server.js
 ├── src/
 │   ├── components/
-│   ├── services/
 │   ├── App.jsx
 │   ├── App.css
 │   └── index.css
@@ -97,39 +95,16 @@ e-com/
 
 ### Frontend
 The frontend is built with React and Vite. Key components include:
-- Product listing with enhanced UI
-- Shopping cart with improved UX
-- Checkout form with validation
+- Product listing
+- Shopping cart
+- Checkout form
 - Order receipt
-- Professional header with search and navigation
-- Hero section with call-to-action
-- Category filtering
-- Comprehensive footer with multiple sections
 
 ### Backend
 The backend is built with Node.js and Express. It includes:
 - RESTful API endpoints
 - MongoDB integration with Mongoose
 - Product, CartItem, and Order models
-- Error handling and validation
-
-## Recent Improvements
-
-### UI/UX Enhancements
-- Added professional header with logo, search bar, and navigation
-- Implemented hero section with promotional content
-- Created category filtering system
-- Designed comprehensive footer with multiple information sections
-- Improved product card design with better spacing and visual hierarchy
-- Enhanced responsive design for all device sizes
-- Added visual feedback for interactive elements
-
-### Functionality Improvements
-- Added product search functionality
-- Implemented category filtering
-- Improved error handling and user feedback
-- Enhanced cart management with better state handling
-- Added loading states for better user experience
 
 ## Deployment
 
@@ -148,11 +123,9 @@ npm start
 - User authentication and profiles
 - Payment integration
 - Order history
-- Advanced product search and filtering
+- Product search and filtering
 - Inventory management
 - Admin dashboard
-- Product reviews and ratings
-- Wishlist functionality
 
 ## License
 
