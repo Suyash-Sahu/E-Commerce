@@ -13,7 +13,7 @@ const CartView = ({ cart, onClose, onUpdateQuantity, onRemove, onCheckout, calcu
           {cart.length === 0 ? (
             <p>Your cart is empty</p>
           ) : (
-            <>
+            <React.Fragment>
               <div className="cart-items">
                 {cart.map(item => (
                   <div key={item._id || item.productId} className="cart-item">
@@ -42,7 +42,7 @@ const CartView = ({ cart, onClose, onUpdateQuantity, onRemove, onCheckout, calcu
                   Proceed to Checkout
                 </button>
               </div>
-            </>
+            </React.Fragment>
           )}
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ProductCard from './components/ProductCard';
 import CartView from './components/CartView';
@@ -245,8 +245,6 @@ function App() {
 
       {/* Main Content */}
       <main>
-        
-
         {/* Error message display */}
         {(error.general || error.products || error.cart) && (
           <div className="error-message">
@@ -255,6 +253,37 @@ function App() {
             {error.cart && <div>Cart Error: {error.cart}</div>}
           </div>
         )}
+
+        {/* Category Filter */}
+        <div className="category-filter">
+          <h3>Filter by Category</h3>
+          <div className="category-buttons">
+            <button 
+              className={selectedCategory === 'all' ? 'active' : ''}
+              onClick={() => setSelectedCategory('all')}
+            >
+              All Products
+            </button>
+            <button 
+              className={selectedCategory === 'electronics' ? 'active' : ''}
+              onClick={() => setSelectedCategory('electronics')}
+            >
+              Electronics
+            </button>
+            <button 
+              className={selectedCategory === 'clothing' ? 'active' : ''}
+              onClick={() => setSelectedCategory('clothing')}
+            >
+              Clothing
+            </button>
+            <button 
+              className={selectedCategory === 'home' ? 'active' : ''}
+              onClick={() => setSelectedCategory('home')}
+            >
+              Home & Kitchen
+            </button>
+          </div>
+        </div>
 
         {showCart && (
           <CartView 
@@ -287,7 +316,7 @@ function App() {
         )}
 
         {!showCart && !showCheckout && !showReceipt && (
-          <>
+          <React.Fragment>
             <section className="featured-products">
               <h2>Featured Products</h2>
               {error.products && <div className="error">Error: {error.products}</div>}
@@ -302,7 +331,7 @@ function App() {
                 ))}
               </div>
             </section>
-          </>
+          </React.Fragment>
         )}
       </main>
 
